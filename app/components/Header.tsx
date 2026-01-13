@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
+import { cn } from "./ui/utils";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,7 +37,7 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-transparent backdrop-blur-md shadow-md"
+          ? "bg-[var(--primary-foreground)] backdrop-blur-md shadow-md"
           : " bg-[var(--background)]"
       }`}
     >
@@ -46,7 +47,7 @@ export function Header() {
             onClick={() => scrollToSection("home")}
             className="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
           >
-            <Logo />
+            <Logo isScrolled={isScrolled} />
           </button>
 
           {/* Desktop Navigation */}
@@ -55,7 +56,12 @@ export function Header() {
               <li key={item.id}>
                 <button
                   onClick={() => scrollToSection(item.id)}
-                  className="text-[var(--primary-foreground)] hover:text-blue-600 transition-colors font-medium"
+                  className={cn(
+                    " hover:text-blue-600 transition-colors font-medium",
+                    isScrolled
+                      ? "text-[var(--background)]"
+                      : "text-[var(--primary-foreground)]"
+                  )}
                 >
                   {item.label}
                 </button>
@@ -66,7 +72,12 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-[var(--primary-foreground)] hover:text-blue-600 transition-colors"
+            className={cn(
+              "md:hidden  transition-colors",
+              isScrolled
+                ? "text-[var(--background)]"
+                : "text-[var(--primary-foreground)]"
+            )}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

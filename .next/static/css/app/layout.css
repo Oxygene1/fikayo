@@ -1639,6 +1639,9 @@
   .whitespace-nowrap {
     white-space: nowrap;
   }
+  .text-\[var\(--background\)\] {
+    color: var(--background);
+  }
   .text-\[var\(--primary-foreground\)\] {
     color: var(--primary-foreground);
   }
