@@ -6,7 +6,6 @@ import { Projects } from "./components/Projects";
 import { Experience } from "./components/Experience";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
-
 export default function Page() {
   return (
     <div className="size-full">

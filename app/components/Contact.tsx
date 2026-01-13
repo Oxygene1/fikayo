@@ -142,7 +142,7 @@ export function Contact() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl p-8 text-white">
+            <div className="bg-gradient-to-br from-[var(--primary)] to-indigo-500 rounded-2xl p-8 text-white">
               <h4 className="text-xl font-bold mb-4">
                 Ready to Start a Project?
               </h4>
@@ -244,7 +244,7 @@ export function Contact() {
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 font-medium"
+                className="w-full bg-gradient-to-br from-[var(--primary)] to-indigo-500 text-white px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 font-medium"
               >
                 <span>Send Message</span>
                 <Send size={18} />

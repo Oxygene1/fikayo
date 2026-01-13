@@ -42,19 +42,19 @@ export function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-20 bg-[var(--background)]">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <p className="text-blue-600 font-medium text-sm uppercase tracking-wider mb-3">Portfolio</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[var(--primary-foreground)] mb-4">
             Featured Projects
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-[var(--secondary-foreground)] max-w-2xl mx-auto">
             A showcase of successful projects demonstrating strategic leadership and measurable impact
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 md:px-10 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
