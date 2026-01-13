@@ -37,7 +37,7 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[var(--primary-foreground)] backdrop-blur-md shadow-md"
+          ? "bg-[var(--background)]/50 backdrop-blur-md shadow-md"
           : " bg-[var(--background)]"
       }`}
     >
@@ -47,7 +47,7 @@ export function Header() {
             onClick={() => scrollToSection("home")}
             className="text-2xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
           >
-            <Logo isScrolled={isScrolled} />
+            <Logo />
           </button>
 
           {/* Desktop Navigation */}
@@ -56,12 +56,9 @@ export function Header() {
               <li key={item.id}>
                 <button
                   onClick={() => scrollToSection(item.id)}
-                  className={cn(
-                    " hover:text-blue-600 transition-colors font-medium",
-                    isScrolled
-                      ? "text-[var(--background)]"
-                      : "text-[var(--primary-foreground)]"
-                  )}
+                  className={
+                    " hover:text-blue-600 transition-colors font-medium text-[var(--primary-foreground)]"
+                  }
                 >
                   {item.label}
                 </button>
@@ -73,10 +70,7 @@ export function Header() {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={cn(
-              "md:hidden  transition-colors",
-              isScrolled
-                ? "text-[var(--background)]"
-                : "text-[var(--primary-foreground)]"
+              "md:hidden  transition-colors text-[var(--primary-foreground)]"
             )}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
